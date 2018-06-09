@@ -10,4 +10,8 @@ for (i=0; i<=monthCount.length; i++){
   if (m.localeCompare(monthCount[i]) === 0){mnomber = i}
 }
 
-console.log(mnomber)
+var date1 = new Date(y, mnomber, d);
+var date2 = new Date(y+1, 0, 0);
+var daysLag = Math.ceil(Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
+
+console.log(daysLag)
