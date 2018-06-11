@@ -7,4 +7,6 @@ var hourCount = Math.abs(Math.round(((xSum/60)/60)-0.5));
 var minetCoun = Math.abs((hourCount*60) - (Math.round((xSum/60)-0.5)));
 var secondCount = Math.abs((hourCount*60*60) + (minetCoun*60) - xSum);
 
-console.log(hourCount + " час " + minetCoun + " минут " + secondCount + " секунд")
+if (hourCount != 0){process.stdout.write(hourCount + " час ")}
+if (minetCoun != 0){process.stdout.write(minetCoun + " минут ")}
+if (secondCount != 0){process.stdout.write(secondCount + " секунд")}
