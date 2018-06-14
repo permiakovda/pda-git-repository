@@ -11,67 +11,36 @@ var hourName = ""
 var minetName = ""
 var secondName = ""
 
-switch (hourCount%10) {
-  case 1:
-    hourName = " час ";
-    break;
-  case 2:
-  case 3:
-  case 4:
-    hourName = " часа ";
-    break;
-  case 5:
-  case 6:
-  case 7:
-  case 8:
-  case 9:
-  case 0:
-    hourName = " часов ";
-    break;
-  default:
+function nameAnd(variable){
+  switch (variable%10) {
+    case 1:
+      hourName = " час ";
+      minetName = " минута ";
+      secondName = " секунда ";
+      break;
+    case 2:
+    case 3:
+    case 4:
+      hourName = " часа ";
+      minetName = " минуты ";
+      secondName = " секунды ";
+      break;
+    case 5:
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 0:
+      hourName = " часов ";
+      minetName = " минут ";
+      secondName = " секунд ";
+      break;
+    default:
+  }
 }
-
-switch (minetCoun%10) {
-  case 1:
-    minetName = " минута ";
-    break;
-  case 2:
-  case 3:
-  case 4:
-    minetName = " минуты ";
-    break;
-  case 5:
-  case 6:
-  case 7:
-  case 8:
-  case 9:
-  case 0:
-    minetName = " минут ";
-    break;
-  default:
-}
-
-switch (secondCount%10) {
-  case 1:
-    secondName = " секунда ";
-    break;
-  case 2:
-  case 3:
-  case 4:
-    secondName = " секунды ";
-    break;
-  case 5:
-  case 6:
-  case 7:
-  case 8:
-  case 9:
-  case 0:
-    secondName = " секунд ";
-    break;
-  default:
-    econdName = " секунд ";
-}
-
+nameAnd(hourCount);
 if (hourCount != 0){  process.stdout.write(hourCount + hourName)}
+nameAnd(minetCoun);
 if (minetCoun != 0){process.stdout.write(minetCoun + minetName)}
+nameAnd(secondCount);
 if (secondCount != 0){process.stdout.write(secondCount + secondName)}
